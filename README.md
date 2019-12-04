@@ -34,17 +34,20 @@ password varchar(64),
 primary key (id)
 );
 
-insert into user (username, password) values ('demo', 'demo');
+insert into user (username, password) values ('demo.plain', 'demo');
+insert into user (username, password) values ('demo.bcrypt', '$2a$10$at7x0pzNyXyNueT6cPpZPe66Ki2c7ewKAl0hZeokp94sP8g2MUJ3m');
+
 ```
 
  
 Helpful SQL to run
 ```
 select * from user;
-+----+----------+----------+
-| id | username | password |
-+----+----------+----------+
-|  1 | demo     | demo     |
-+----+----------+----------+
-1 row in set (0.00 sec)
++----+-------------+--------------------------------------------------------------+
+| id | username    | password                                                     |
++----+-------------+--------------------------------------------------------------+
+|  1 | demo.plain  | demo                                                         |
+|  2 | demo.bcrypt | $2a$10$at7x0pzNyXyNueT6cPpZPe66Ki2c7ewKAl0hZeokp94sP8g2MUJ3m |
++----+-------------+--------------------------------------------------------------+
+2 rows in set (0.00 sec)
 ```
