@@ -10,4 +10,14 @@ public class IndexController {
     public String index() {
         return "index.jsp";
     }
+
+    @RequestMapping("/login")
+    public String login() {
+        return "login.jsp";
+    }
+
+    @RequestMapping("/logout-success")
+    public String logout() {
+        return "logout.jsp";
+    }
 }
