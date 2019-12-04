@@ -23,11 +23,28 @@ h2 database
 spring security
 ```
 
-H2 Database
+MYSQL Database
 ============
-Console URL: http://localhost:8080/h2-console
+Table setup
+```
+create table user (
+id int not null auto_increment, 
+username varchar(32), 
+password varchar(64), 
+primary key (id)
+);
 
+insert into user (username, password) values ('demo', 'demo');
+```
+
+ 
 Helpful SQL to run
 ```
 select * from user;
++----+----------+----------+
+| id | username | password |
++----+----------+----------+
+|  1 | demo     | demo     |
++----+----------+----------+
+1 row in set (0.00 sec)
 ```
